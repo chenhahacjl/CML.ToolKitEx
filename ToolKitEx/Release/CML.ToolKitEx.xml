@@ -4,5 +4,271 @@
         <name>CML.ToolKitEx</name>
     </assembly>
     <members>
+        <member name="T:CML.PkgResult.TResult`1">
+            <summary>
+            泛型操作结果类
+            </summary>
+            <typeparam name="T">结果类型</typeparam>
+        </member>
+        <member name="P:CML.PkgResult.TResult`1.Result">
+            <summary>
+            泛型结果数据
+            </summary>
+        </member>
+        <member name="M:CML.PkgResult.TResult`1.GetExceptionString(System.Exception)">
+            <summary>
+            获得异常信息字符串
+            </summary>
+            <param name="ex">异常对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:CML.PkgResult.TResult`1.GetEnumNumber(System.Enum)">
+            <summary>
+            获取枚举数值
+            </summary>
+            <param name="en">枚举</param>
+            <returns>返回枚举的描述</returns>
+        </member>
+        <member name="M:CML.PkgResult.TResult`1.GetEnumDescription(System.Enum)">
+            <summary>
+            获取枚举的描述
+            </summary>
+            <param name="en">枚举</param>
+            <returns>返回枚举的描述</returns>
+        </member>
+        <member name="M:CML.PkgResult.TResult`1.#ctor(`0)">
+            <summary>
+            构造成功操作结果
+            </summary>
+            <param name="result">结果数据</param>
+        </member>
+        <member name="M:CML.PkgResult.TResult`1.#ctor(`0,System.String)">
+            <summary>
+            构造失败操作结果（错误代码为-1）
+            </summary>
+            <param name="result">结果数据</param>
+            <param name="errMsg">错误描述</param>
+        </member>
+        <member name="M:CML.PkgResult.TResult`1.#ctor(`0,System.Exception)">
+            <summary>
+            构造失败操作结果（错误代码为-1）
+            </summary>
+            <param name="result">结果数据</param>
+            <param name="exception">异常信息对象</param>
+        </member>
+        <member name="M:CML.PkgResult.TResult`1.#ctor(`0,System.Int32,System.String)">
+            <summary>
+            构造操作结果
+            </summary>
+            <param name="result">结果数据</param>
+            <param name="errCode">错误代码(0代表调用成功)</param>
+            <param name="errMsg">错误描述</param>
+        </member>
+        <member name="M:CML.PkgResult.TResult`1.#ctor(`0,System.Enum)">
+            <summary>
+            构造操作结果
+            </summary>
+            <param name="result">结果数据</param>
+            <param name="errEnum">描述枚举（取数值与描述）</param>
+        </member>
+        <member name="M:CML.PkgResult.TResult`1.ToString">
+            <summary>
+            重写ToString方法
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CML.PkgResult.TResult`1.op_LogicalNot(CML.PkgResult.TResult{`0})">
+            <summary>
+            重载!操作符
+            </summary>
+            <param name="result">操作结果</param>
+            <returns></returns>
+        </member>
+        <member name="T:CML.PkgResult.TResultBase">
+            <summary>
+            操作结果基础类
+            </summary>
+        </member>
+        <member name="P:CML.PkgResult.TResultBase.IsSuccess">
+            <summary>
+            是否调用成功
+            </summary>
+        </member>
+        <member name="P:CML.PkgResult.TResultBase.ErrorCode">
+            <summary>
+            错误代码[0代表调用成功]
+            </summary>
+        </member>
+        <member name="P:CML.PkgResult.TResultBase.ErrorMessage">
+            <summary>
+            错误描述
+            </summary>
+        </member>
+        <member name="M:CML.PkgResult.TResultBase.#ctor">
+            <summary>
+            构造操作成功结果
+            </summary>
+        </member>
+        <member name="M:CML.PkgResult.TResultBase.#ctor(System.Int32,System.String)">
+            <summary>
+            构造操作结果
+            </summary>
+            <param name="errCode">错误代码</param>
+            <param name="errMsg">错误描述</param>
+        </member>
+        <member name="T:CML.PkgResult.VersionInfo">
+            <summary>
+            泛型结果工具包版本信息
+            </summary>
+        </member>
+        <member name="P:CML.PkgResult.VersionInfo.VerMain">
+            <summary>
+            主版本号
+            </summary>
+        </member>
+        <member name="P:CML.PkgResult.VersionInfo.VerDev">
+            <summary>
+            研发版本号
+            </summary>
+        </member>
+        <member name="P:CML.PkgResult.VersionInfo.VerDate">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="P:CML.PkgResult.VersionInfo.RunAssembly">
+            <summary>
+            当前程序集 
+            </summary>
+        </member>
+        <member name="M:CML.PkgResult.VersionInfo.GetVersionInfo">
+            <summary>
+            获得版本信息
+            </summary>
+            <returns>版本信息</returns>
+        </member>
+        <member name="T:CML.PkgSingleton.SingletonBase`1">
+            <summary>
+            单实例基础类
+            </summary>
+            <typeparam name="T">类</typeparam>
+        </member>
+        <member name="F:CML.PkgSingleton.SingletonBase`1.m_instance">
+            <summary>
+            单例对象
+            </summary>
+        </member>
+        <member name="F:CML.PkgSingleton.SingletonBase`1.m_sysLock">
+            <summary>
+            系统锁
+            </summary>
+        </member>
+        <member name="P:CML.PkgSingleton.SingletonBase`1.Instance">
+            <summary>
+            获得单例对象
+            </summary>
+            <returns>单例对象</returns>
+        </member>
+        <member name="T:CML.PkgSingleton.VersionInfo">
+            <summary>
+            单实例工具包版本信息
+            </summary>
+        </member>
+        <member name="P:CML.PkgSingleton.VersionInfo.VerMain">
+            <summary>
+            主版本号
+            </summary>
+        </member>
+        <member name="P:CML.PkgSingleton.VersionInfo.VerDev">
+            <summary>
+            研发版本号
+            </summary>
+        </member>
+        <member name="P:CML.PkgSingleton.VersionInfo.VerDate">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="P:CML.PkgSingleton.VersionInfo.RunAssembly">
+            <summary>
+            当前程序集 
+            </summary>
+        </member>
+        <member name="M:CML.PkgSingleton.VersionInfo.GetVersionInfo">
+            <summary>
+            获得版本信息
+            </summary>
+            <returns>版本信息</returns>
+        </member>
+        <member name="T:CML.PkgVersion.VersionBase">
+            <summary>
+            版本控制基础类
+            </summary>
+        </member>
+        <member name="P:CML.PkgVersion.VersionBase.VerMain">
+            <summary>
+            主版本号[##.##]
+            </summary>
+        </member>
+        <member name="P:CML.PkgVersion.VersionBase.VerDev">
+            <summary>
+            研发版本号[{YY}Y{##N}{[A,B,R]}{##N}]
+            </summary>
+        </member>
+        <member name="P:CML.PkgVersion.VersionBase.VerDate">
+            <summary>
+            更新时间[YYYY年YY月DD日 HH:MM]
+            </summary>
+        </member>
+        <member name="P:CML.PkgVersion.VersionBase.RunAssembly">
+            <summary>
+            当前程序集 
+            </summary>
+        </member>
+        <member name="M:CML.PkgVersion.VersionBase.GetVersionInfo(System.String)">
+            <summary>
+            获得版本信息
+            </summary>
+            <param name="file">嵌入资源路径</param>
+            <returns>版本信息</returns>
+        </member>
+        <member name="M:CML.PkgVersion.VersionBase.GetUpdateInfo(System.String)">
+            <summary>
+            获取升级记录
+            </summary>
+            <param name="file">嵌入资源路径</param>
+            <returns>更新记录</returns>
+        </member>
+        <member name="T:CML.PkgVersion.VersionInfo">
+            <summary>
+            版本控制工具包版本信息
+            </summary>
+        </member>
+        <member name="P:CML.PkgVersion.VersionInfo.VerMain">
+            <summary>
+            主版本号
+            </summary>
+        </member>
+        <member name="P:CML.PkgVersion.VersionInfo.VerDev">
+            <summary>
+            研发版本号
+            </summary>
+        </member>
+        <member name="P:CML.PkgVersion.VersionInfo.VerDate">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="P:CML.PkgVersion.VersionInfo.RunAssembly">
+            <summary>
+            当前程序集 
+            </summary>
+        </member>
+        <member name="M:CML.PkgVersion.VersionInfo.GetVersionInfo">
+            <summary>
+            获得版本信息
+            </summary>
+            <returns>版本信息</returns>
+        </member>
     </members>
 </doc>

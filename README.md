@@ -20,6 +20,13 @@ CML.ToolKitEx是一个基于C#的编程工具包，其中包含数据库操作�
 * Framework: .Net Framework 4.0
 
 ## 当前进度
+- [ ] PkgResult <泛型结果工具包>
+	- [x] TResultBase <操作结果基础类>
+	- [x] TResult <泛型操作结果类>
+- [ ] PkgSingleton <单实例工具包>
+	- [x] SingletonBase <单实例基础类>
+- [ ] PkgVersion <版本控制工具包>
+	- [x] VersionBase <版本控制基础类>
 
 ## GitHub
 Click Here: [https://github.com/chenhahacjl/CML.ToolKitEx](https://github.com/chenhahacjl/CML.ToolKitEx "CML.ToolKitEx GitHub Website")

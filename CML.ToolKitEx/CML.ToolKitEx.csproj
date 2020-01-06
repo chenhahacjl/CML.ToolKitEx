@@ -42,7 +42,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PkgResult\TResult.cs" />
+    <Compile Include="PkgResult\TResultBase.cs" />
+    <Compile Include="PkgResult\VersionControl\VersionInfo.cs" />
+    <Compile Include="PkgSingleton\SingletonBase.cs" />
+    <Compile Include="PkgSingleton\VersionControl\VersionInfo.cs" />
+    <Compile Include="PkgVersion\VersionBase.cs" />
+    <Compile Include="PkgVersion\VersionControl\VersionInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="PkgVersion\VersionControl\UpdateInfo.LOG" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="PkgResult\VersionControl\UpdateInfo.LOG" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="PkgSingleton\VersionControl\UpdateInfo.LOG" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

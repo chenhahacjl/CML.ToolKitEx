@@ -41,8 +41,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PkgResult.cs" />
+    <Compile Include="PkgSingleton.cs" />
+    <Compile Include="ToolkitTestBase.cs" />
+    <Compile Include="PkgVersion.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CML.ToolKitEx\CML.ToolKitEx.csproj">
+      <Project>{26d3aa5f-0ec5-40d1-ac4a-7c9f0c402899}</Project>
+      <Name>CML.ToolKitEx</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
