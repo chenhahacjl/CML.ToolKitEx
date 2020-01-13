@@ -586,6 +586,189 @@
             </summary>
             <returns>版本信息</returns>
         </member>
+        <member name="T:CML.PkgEmail.Email">
+            <summary>
+            Email操作类
+            </summary>
+        </member>
+        <member name="P:CML.PkgEmail.Email.ServerInfo">
+            <summary>
+            发送服务器信息
+            </summary>
+        </member>
+        <member name="M:CML.PkgEmail.Email.#ctor">
+            <summary>
+            默认构造函数
+            </summary>
+        </member>
+        <member name="M:CML.PkgEmail.Email.#ctor(CML.PkgEmail.MServerInfo)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="serverInfo">发送服务器信息</param>
+        </member>
+        <member name="M:CML.PkgEmail.Email.SendEmail(CML.PkgEmail.MEmailInfo)">
+            <summary>
+            发送邮件
+            </summary>
+            <param name="emailInfo">邮件信息</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:CML.PkgEmail.EmailE">
+            <summary>
+            Email操作类（扩展方法）
+            </summary>
+        </member>
+        <member name="M:CML.PkgEmail.EmailE.SendEmail(CML.PkgEmail.MServerInfo,CML.PkgEmail.MEmailInfo)">
+            <summary>
+            发送邮件
+            </summary>
+            <param name="serverInfo">[THIS]服务器信息</param>
+            <param name="emailInfo">邮件信息</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:CML.PkgEmail.EmailE.SendEmail(CML.PkgEmail.MEmailInfo,CML.PkgEmail.MServerInfo)">
+            <summary>
+            发送邮件
+            </summary>
+            <param name="emailInfo">[THIS]邮件信息</param>
+            <param name="serverInfo">服务器信息</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:CML.PkgEmail.EmailS">
+            <summary>
+            Email操作类（静态方法）
+            </summary>
+        </member>
+        <member name="M:CML.PkgEmail.EmailS.SendEmail(CML.PkgEmail.MServerInfo,CML.PkgEmail.MEmailInfo)">
+            <summary>
+            发送邮件
+            </summary>
+            <param name="serverInfo">服务器信息</param>
+            <param name="emailInfo">邮件信息</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:CML.PkgEmail.MEmailInfo">
+            <summary>
+            邮件信息
+            </summary>
+        </member>
+        <member name="P:CML.PkgEmail.MEmailInfo.FromEmail">
+            <summary>
+            发送者
+            </summary>
+        </member>
+        <member name="P:CML.PkgEmail.MEmailInfo.FromName">
+            <summary>
+            发送者显示名称
+            </summary>
+        </member>
+        <member name="P:CML.PkgEmail.MEmailInfo.ToEmail">
+            <summary>
+            收件者列表
+            </summary>
+        </member>
+        <member name="P:CML.PkgEmail.MEmailInfo.CCEmail">
+            <summary>
+            抄送者列表
+            </summary>
+        </member>
+        <member name="P:CML.PkgEmail.MEmailInfo.BCCEmail">
+            <summary>
+            密送者列表
+            </summary>
+        </member>
+        <member name="P:CML.PkgEmail.MEmailInfo.Subject">
+            <summary>
+            邮件标题
+            </summary>
+        </member>
+        <member name="P:CML.PkgEmail.MEmailInfo.Body">
+            <summary>
+            邮件正文
+            </summary>
+        </member>
+        <member name="P:CML.PkgEmail.MEmailInfo.IsBodyHtml">
+            <summary>
+            邮件正文是否为HTML格式（默认为True）
+            </summary>
+        </member>
+        <member name="P:CML.PkgEmail.MEmailInfo.AttachmentList">
+            <summary>
+            附件列表
+            </summary>
+        </member>
+        <member name="P:CML.PkgEmail.MEmailInfo.Encoding">
+            <summary>
+            文本编码格式
+            </summary>
+        </member>
+        <member name="P:CML.PkgEmail.MEmailInfo.MailPriority">
+            <summary>
+            邮件优先级
+            </summary>
+        </member>
+        <member name="T:CML.PkgEmail.MServerInfo">
+            <summary>
+            发送服务器信息
+            </summary>
+        </member>
+        <member name="P:CML.PkgEmail.MServerInfo.SmtpHost">
+            <summary>
+            SMTP服务器
+            </summary>
+        </member>
+        <member name="P:CML.PkgEmail.MServerInfo.SmtpPort">
+            <summary>
+            SMTP服务器端口(默认25)
+            </summary>
+        </member>
+        <member name="P:CML.PkgEmail.MServerInfo.SmtpUser">
+            <summary>
+            SMTP服务器用户名
+            </summary>
+        </member>
+        <member name="P:CML.PkgEmail.MServerInfo.SmtpPwd">
+            <summary>
+            SMTP服务器密码
+            </summary>
+        </member>
+        <member name="P:CML.PkgEmail.MServerInfo.EnableSsl">
+            <summary>
+            是否启用SSL加密连接（默认为False）
+            </summary>
+        </member>
+        <member name="T:CML.PkgEmail.VersionInfo">
+            <summary>
+            EMAIL操作工具包版本信息
+            </summary>
+        </member>
+        <member name="P:CML.PkgEmail.VersionInfo.VerMain">
+            <summary>
+            主版本号
+            </summary>
+        </member>
+        <member name="P:CML.PkgEmail.VersionInfo.VerDev">
+            <summary>
+            研发版本号
+            </summary>
+        </member>
+        <member name="P:CML.PkgEmail.VersionInfo.VerDate">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="P:CML.PkgEmail.VersionInfo.RunAssembly">
+            <summary>
+            当前程序集 
+            </summary>
+        </member>
+        <member name="M:CML.PkgEmail.VersionInfo.GetVersionInfo">
+            <summary>
+            获得版本信息
+            </summary>
+            <returns>版本信息</returns>
+        </member>
         <member name="T:CML.PkgResult.TResult`1">
             <summary>
             泛型操作结果类

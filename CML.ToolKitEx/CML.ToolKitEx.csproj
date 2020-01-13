@@ -60,6 +60,10 @@
     <Compile Include="PkgDatabase\Model\MDataParameter.cs" />
     <Compile Include="PkgDatabase\Model\MTransactionParameter.cs" />
     <Compile Include="PkgDatabase\VersionControl\VersionInfo.cs" />
+    <Compile Include="PkgEmail\Email.cs" />
+    <Compile Include="PkgEmail\Model\MEmailInfo.cs" />
+    <Compile Include="PkgEmail\Model\MServerInfo.cs" />
+    <Compile Include="PkgEmail\VersionControl\VersionInfo.cs" />
     <Compile Include="PkgResult\TResult.cs" />
     <Compile Include="PkgResult\TResultBase.cs" />
     <Compile Include="PkgResult\VersionControl\VersionInfo.cs" />
@@ -84,6 +88,9 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="PkgDatabase\VersionControl\UpdateInfo.LOG" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="PkgEmail\VersionControl\UpdateInfo.LOG" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

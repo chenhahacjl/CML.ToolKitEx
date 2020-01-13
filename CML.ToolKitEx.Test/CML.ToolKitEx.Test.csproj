@@ -41,7 +41,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PkgTest\PkgDatabase.cs" />
     <Compile Include="PkgTest\PkgResult.cs" />
     <Compile Include="PkgTest\PkgSingleton.cs" />
     <Compile Include="PkgTestBase.cs" />
