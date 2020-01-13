@@ -5,7 +5,7 @@ namespace CML.ToolKitEx.Test
     /// <summary>
     /// 单实例工具包测试
     /// </summary>
-    internal class PkgSingleton : ToolkitTestBase
+    internal class PkgSingleton : PkgTestBase
     {
         /// <summary>
         /// 测试类名
@@ -21,6 +21,11 @@ namespace CML.ToolKitEx.Test
         /// 版本信息
         /// </summary>
         public override string VersionInfo => $"{new VersionInfo().VerMain} => {new VersionInfo().VerDev}";
+
+        /// <summary>
+        /// 更新信息
+        /// </summary>
+        public override string UpdateInfo => new VersionInfo().GetVersionInfo();
 
         /// <summary>
         /// 执行测试

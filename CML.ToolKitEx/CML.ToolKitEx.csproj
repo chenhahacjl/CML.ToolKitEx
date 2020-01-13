@@ -7,7 +7,7 @@
     <ProjectGuid>{26D3AA5F-0EC5-40D1-AC4A-7C9F0C402899}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CML.ToolKitEx</RootNamespace>
+    <RootNamespace>CML</RootNamespace>
     <AssemblyName>CML.ToolKitEx</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -33,6 +33,14 @@
     <DocumentationFile>..\ToolKitEx\Release\CML.ToolKitEx.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MySql.Data, Version=6.4.3.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>PkgDataBase\Library\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Oracle.ManagedDataAccess, Version=4.121.2.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>PkgDataBase\Library\Oracle.ManagedDataAccess.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -42,6 +50,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PkgDatabase\Database.cs" />
+    <Compile Include="PkgDatabase\DatabaseBase\DatabaseAccess.cs" />
+    <Compile Include="PkgDatabase\DatabaseBase\DatabaseMySql.cs" />
+    <Compile Include="PkgDatabase\DatabaseBase\DatabaseOracle.cs" />
+    <Compile Include="PkgDatabase\DatabaseBase\DatabaseSqlServer.cs" />
+    <Compile Include="PkgDatabase\DatabaseBase\IDatabaseBase.cs" />
+    <Compile Include="PkgDatabase\Enum\EDatabaseType.cs" />
+    <Compile Include="PkgDatabase\Model\MDataParameter.cs" />
+    <Compile Include="PkgDatabase\Model\MTransactionParameter.cs" />
+    <Compile Include="PkgDatabase\VersionControl\VersionInfo.cs" />
     <Compile Include="PkgResult\TResult.cs" />
     <Compile Include="PkgResult\TResultBase.cs" />
     <Compile Include="PkgResult\VersionControl\VersionInfo.cs" />
@@ -59,6 +77,13 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="PkgSingleton\VersionControl\UpdateInfo.LOG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PkgDatabase\Library\MySql.Data.dll" />
+    <Content Include="PkgDatabase\Library\Oracle.ManagedDataAccess.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="PkgDatabase\VersionControl\UpdateInfo.LOG" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

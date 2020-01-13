@@ -27,7 +27,7 @@ namespace CML.ToolKitEx.Test
             //整理测试类
             for (int i = testClassTypes.Count - 1; i >= 0; i--)
             {
-                if (!testClassTypes[i].IsSubclassOf(typeof(ToolkitTestBase)))
+                if (!testClassTypes[i].IsSubclassOf(typeof(PkgTestBase)))
                 {
                     testClassTypes.Remove(testClassTypes[i]);
                 }
@@ -45,7 +45,7 @@ namespace CML.ToolKitEx.Test
             else
             {
                 //测试实例字典
-                Dictionary<string, ToolkitTestBase> dicInstance = new Dictionary<string, ToolkitTestBase>();
+                Dictionary<string, PkgTestBase> dicInstance = new Dictionary<string, PkgTestBase>();
                 //测试结果字典
                 Dictionary<string, bool> dicTestResult = new Dictionary<string, bool>();
 
@@ -56,7 +56,7 @@ namespace CML.ToolKitEx.Test
                 for (int i = 0; i < testClassTypes.Count; i++)
                 {
                     //实例化测试项目
-                    ToolkitTestBase toolKitTest = (ToolkitTestBase)Activator.CreateInstance(testClassTypes[i], true);
+                    PkgTestBase toolKitTest = (PkgTestBase)Activator.CreateInstance(testClassTypes[i], true);
                     //保存实例
                     dicInstance.Add(Guid.NewGuid().ToString(), toolKitTest);
                     //输出名称
@@ -89,6 +89,14 @@ namespace CML.ToolKitEx.Test
 
                         //显示测试包版本信息
                         Console.WriteLine("[版本信息]" + dicInstance[dicInstance.Keys.ToArray()[i]].VersionInfo);
+
+                        //分隔符
+                        Console.WriteLine(PadCenter(string.Empty, '-'));
+                        Console.WriteLine(PadCenter("更新记录", ' '));
+                        Console.WriteLine(PadCenter(string.Empty, '-'));
+
+                        //显示测试包版本信息
+                        Console.WriteLine(dicInstance[dicInstance.Keys.ToArray()[i]].UpdateInfo);
 
                         //分隔符
                         Console.WriteLine(PadCenter(string.Empty, '-'));

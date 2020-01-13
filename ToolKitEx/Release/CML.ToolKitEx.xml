@@ -4,6 +4,588 @@
         <name>CML.ToolKitEx</name>
     </assembly>
     <members>
+        <member name="T:CML.PkgDatabase.Database">
+            <summary>
+            数据库帮助类
+            </summary>
+        </member>
+        <member name="F:CML.PkgDatabase.Database.m_iDatabaseBase">
+            <summary>
+            数据库底层
+            </summary>
+        </member>
+        <member name="F:CML.PkgDatabase.Database.m_iConn">
+            <summary>
+            数据库连接
+            </summary>
+        </member>
+        <member name="F:CML.PkgDatabase.Database.m_iCmd">
+            <summary>
+            数据库执行命令
+            </summary>
+        </member>
+        <member name="F:CML.PkgDatabase.Database.m_isInitDatabase">
+            <summary>
+            数据库初始化标志
+            </summary>
+        </member>
+        <member name="P:CML.PkgDatabase.Database.ConnectionType">
+            <summary>
+            数据库类型
+            </summary>
+        </member>
+        <member name="P:CML.PkgDatabase.Database.ConnectionString">
+            <summary>
+            数据库连接字符串
+            </summary>
+        </member>
+        <member name="P:CML.PkgDatabase.Database.IsAutoCloseConn">
+            <summary>
+            是否自动关闭数据库连接(默认开启自动关闭)
+            </summary>
+        </member>
+        <member name="M:CML.PkgDatabase.Database.#ctor">
+            <summary>
+            建立数据库连接
+            </summary>
+        </member>
+        <member name="M:CML.PkgDatabase.Database.#ctor(CML.PkgDatabase.EDatabaseType,System.String)">
+            <summary>
+            建立数据库连接
+            </summary>
+            <param name="dbType">连接数据库类型</param>
+            <param name="strConnStr">数据库连接字符串</param>
+        </member>
+        <member name="M:CML.PkgDatabase.Database.InitDatabase">
+            <summary>
+            初始化数据库
+            </summary>
+        </member>
+        <member name="M:CML.PkgDatabase.Database.OpenConnection">
+            <summary>
+            打开数据库连接
+            </summary>
+        </member>
+        <member name="M:CML.PkgDatabase.Database.CloseConnection">
+            <summary>
+            关闭数据库连接
+            </summary>
+        </member>
+        <member name="M:CML.PkgDatabase.Database.ExecuteQuery(System.String)">
+            <summary>
+            执行SQL语句，返回数据表
+            </summary>
+            <param name="strSql">SQL语句</param>
+            <returns>数据表</returns>
+        </member>
+        <member name="M:CML.PkgDatabase.Database.ExecuteQuery(System.String,CML.PkgDatabase.MDataParameter)">
+            <summary>
+            执行SQL语句，返回数据表
+            </summary>
+            <param name="strSql">SQL语句</param>
+            <param name="dataParameter">参数</param>
+            <returns>数据表</returns>
+        </member>
+        <member name="M:CML.PkgDatabase.Database.ExecuteQuery(System.String,CML.PkgDatabase.MDataParameter[])">
+            <summary>
+            执行SQL语句，返回数据表
+            </summary>
+            <param name="strSql">SQL语句</param>
+            <param name="dataParameters">参数数组</param>
+            <returns>数据表</returns>
+        </member>
+        <member name="M:CML.PkgDatabase.Database.ExecuteQuery(System.String,System.Collections.Generic.List{CML.PkgDatabase.MDataParameter})">
+            <summary>
+            执行SQL语句，返回数据表
+            </summary>
+            <param name="strSql">SQL语句</param>
+            <param name="dataParameters">参数列表</param>
+            <returns>数据表</returns>
+        </member>
+        <member name="M:CML.PkgDatabase.Database.ExecuteNonQuery(System.String)">
+            <summary>
+            执行SQL语句，返回影响记录数
+            </summary>
+            <param name="strSql">SQL语句</param>
+            <returns>影响记录数</returns>
+        </member>
+        <member name="M:CML.PkgDatabase.Database.ExecuteNonQuery(System.String,CML.PkgDatabase.MDataParameter)">
+            <summary>
+            执行SQL语句，返回影响记录数
+            </summary>
+            <param name="strSql">SQL语句</param>
+            <param name="dataParameter">参数</param>
+            <returns>影响记录数</returns>
+        </member>
+        <member name="M:CML.PkgDatabase.Database.ExecuteNonQuery(System.String,CML.PkgDatabase.MDataParameter[])">
+            <summary>
+            执行SQL语句，返回影响记录数
+            </summary>
+            <param name="strSql">SQL语句</param>
+            <param name="dataParameters">参数数组</param>
+            <returns>影响记录数</returns>
+        </member>
+        <member name="M:CML.PkgDatabase.Database.ExecuteNonQuery(System.String,System.Collections.Generic.List{CML.PkgDatabase.MDataParameter})">
+            <summary>
+            执行SQL语句，返回影响记录数
+            </summary>
+            <param name="strSql">SQL语句</param>
+            <param name="dataParameters">参数列表</param>
+            <returns>影响记录数</returns>
+        </member>
+        <member name="M:CML.PkgDatabase.Database.GetSingleObject(System.String)">
+            <summary>
+            执行SQL语句，返回结果集中的第一行的第一列
+            </summary>
+            <param name="strSql">SQL语句</param>
+            <returns>结果集中的第一行的第一列</returns>
+        </member>
+        <member name="M:CML.PkgDatabase.Database.GetSingleObject(System.String,CML.PkgDatabase.MDataParameter)">
+            <summary>
+            执行SQL语句，返回结果集中的第一行的第一列
+            </summary>
+            <param name="strSql">SQL语句</param>
+            <param name="dataParameter">参数</param>
+            <returns>结果集中的第一行的第一列</returns>
+        </member>
+        <member name="M:CML.PkgDatabase.Database.GetSingleObject(System.String,CML.PkgDatabase.MDataParameter[])">
+            <summary>
+            执行SQL语句，返回结果集中的第一行的第一列
+            </summary>
+            <param name="strSql">SQL语句</param>
+            <param name="dataParameters">参数数组</param>
+            <returns>结果集中的第一行的第一列</returns>
+        </member>
+        <member name="M:CML.PkgDatabase.Database.GetSingleObject(System.String,System.Collections.Generic.List{CML.PkgDatabase.MDataParameter})">
+            <summary>
+            执行SQL语句，返回结果集中的第一行的第一列
+            </summary>
+            <param name="strSql">SQL语句</param>
+            <param name="dataParameters">参数列表</param>
+            <returns>结果集中的第一行的第一列</returns>
+        </member>
+        <member name="M:CML.PkgDatabase.Database.ExecuteTransaction(System.String[])">
+            <summary>
+            执行多条SQL语句，实现数据库事务
+            </summary>
+            <param name="strSqls">事务执行SQL数组</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:CML.PkgDatabase.Database.ExecuteTransaction(System.Collections.Generic.List{System.String})">
+            <summary>
+            执行多条SQL语句，实现数据库事务
+            </summary>
+            <param name="strSqls">事务执行SQL列表</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:CML.PkgDatabase.Database.ExecuteTransaction(CML.PkgDatabase.MTransactionParameter[])">
+            <summary>
+            执行多条SQL语句，实现数据库事务
+            </summary>
+            <param name="parameters">事务执行参数数组</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:CML.PkgDatabase.Database.ExecuteTransaction(System.Collections.Generic.List{CML.PkgDatabase.MTransactionParameter})">
+            <summary>
+            执行多条SQL语句，实现数据库事务
+            </summary>
+            <param name="parameters">事务执行参数列表</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:CML.PkgDatabase.DatabaseBase.DatabaseAccess">
+            <summary>
+            ACCESS 数据库操作类
+            </summary>
+        </member>
+        <member name="P:CML.PkgDatabase.DatabaseBase.DatabaseAccess.ConnectionString">
+            <summary>
+            ACCESS 数据库连接字符串
+            </summary>
+        </member>
+        <member name="P:CML.PkgDatabase.DatabaseBase.DatabaseAccess.RuntimeDepend">
+            <summary>
+            运行依赖
+            </summary>
+        </member>
+        <member name="M:CML.PkgDatabase.DatabaseBase.DatabaseAccess.CreateConnection">
+            <summary>
+            建立Connection对象
+            </summary>
+            <returns>Connection对象</returns>
+        </member>
+        <member name="M:CML.PkgDatabase.DatabaseBase.DatabaseAccess.CreateConnection(System.String)">
+            <summary>
+            根据连接字符串建立Connection对象
+            </summary>
+            <param name="strConn">连接字符串</param>
+            <returns>Connection对象</returns>
+        </member>
+        <member name="M:CML.PkgDatabase.DatabaseBase.DatabaseAccess.CreateCommand">
+            <summary>
+            建立Command对象
+            </summary>
+            <returns>Command对象</returns>
+        </member>
+        <member name="M:CML.PkgDatabase.DatabaseBase.DatabaseAccess.CreateDataAdapter">
+            <summary>
+            建立DataAdapter对象
+            </summary>
+            <returns>DataAdapter对象</returns>
+        </member>
+        <member name="M:CML.PkgDatabase.DatabaseBase.DatabaseAccess.CreateTransaction(System.Data.IDbConnection)">
+            <summary>
+            根据Connection建立Transaction
+            </summary>
+            <param name="iConn">Connection对象</param>
+            <returns>Transaction对象</returns>
+        </member>
+        <member name="M:CML.PkgDatabase.DatabaseBase.DatabaseAccess.CreateDataParameter(System.Data.IDbCommand)">
+            <summary>
+            根据Command对象建立DataReader
+            </summary>
+            <param name="iCmd">Command对象</param>
+            <returns>DataReader对象</returns>
+        </member>
+        <member name="T:CML.PkgDatabase.DatabaseBase.DatabaseMySql">
+            <summary>
+            MYSQL 数据库操作类
+            </summary>
+        </member>
+        <member name="P:CML.PkgDatabase.DatabaseBase.DatabaseMySql.ConnectionString">
+            <summary>
+            MYSQL 数据库连接字符串
+            </summary>
+        </member>
+        <member name="P:CML.PkgDatabase.DatabaseBase.DatabaseMySql.RuntimeDepend">
+            <summary>
+            运行依赖
+            </summary>
+        </member>
+        <member name="M:CML.PkgDatabase.DatabaseBase.DatabaseMySql.CreateConnection">
+            <summary>
+            建立Connection对象
+            </summary>
+            <returns>Connection对象</returns>
+        </member>
+        <member name="M:CML.PkgDatabase.DatabaseBase.DatabaseMySql.CreateConnection(System.String)">
+            <summary>
+            根据连接字符串建立Connection对象
+            </summary>
+            <param name="strConn">连接字符串</param>
+            <returns>Connection对象</returns>
+        </member>
+        <member name="M:CML.PkgDatabase.DatabaseBase.DatabaseMySql.CreateCommand">
+            <summary>
+            建立Command对象
+            </summary>
+            <returns>Command对象</returns>
+        </member>
+        <member name="M:CML.PkgDatabase.DatabaseBase.DatabaseMySql.CreateDataAdapter">
+            <summary>
+            建立DataAdapter对象
+            </summary>
+            <returns>DataAdapter对象</returns>
+        </member>
+        <member name="M:CML.PkgDatabase.DatabaseBase.DatabaseMySql.CreateTransaction(System.Data.IDbConnection)">
+            <summary>
+            根据Connection建立Transaction
+            </summary>
+            <param name="iConn">Connection对象</param>
+            <returns>Transaction对象</returns>
+        </member>
+        <member name="M:CML.PkgDatabase.DatabaseBase.DatabaseMySql.CreateDataParameter(System.Data.IDbCommand)">
+            <summary>
+            根据Command对象建立DataReader
+            </summary>
+            <param name="iCmd">Command对象</param>
+            <returns>DataReader对象</returns>
+        </member>
+        <member name="T:CML.PkgDatabase.DatabaseBase.DatabaseOracle">
+            <summary>
+            ORACLE 数据库操作类
+            </summary>
+        </member>
+        <member name="P:CML.PkgDatabase.DatabaseBase.DatabaseOracle.ConnectionString">
+            <summary>
+            ORACLE 数据库连接字符串
+            </summary>
+        </member>
+        <member name="P:CML.PkgDatabase.DatabaseBase.DatabaseOracle.RuntimeDepend">
+            <summary>
+            运行依赖
+            </summary>
+        </member>
+        <member name="M:CML.PkgDatabase.DatabaseBase.DatabaseOracle.CreateConnection">
+            <summary>
+            建立Connection对象
+            </summary>
+            <returns>Connection对象</returns>
+        </member>
+        <member name="M:CML.PkgDatabase.DatabaseBase.DatabaseOracle.CreateConnection(System.String)">
+            <summary>
+            根据连接字符串建立Connection对象
+            </summary>
+            <param name="strConn">连接字符串</param>
+            <returns>Connection对象</returns>
+        </member>
+        <member name="M:CML.PkgDatabase.DatabaseBase.DatabaseOracle.CreateCommand">
+            <summary>
+            建立Command对象
+            </summary>
+            <returns>Command对象</returns>
+        </member>
+        <member name="M:CML.PkgDatabase.DatabaseBase.DatabaseOracle.CreateDataAdapter">
+            <summary>
+            建立DataAdapter对象
+            </summary>
+            <returns>DataAdapter对象</returns>
+        </member>
+        <member name="M:CML.PkgDatabase.DatabaseBase.DatabaseOracle.CreateTransaction(System.Data.IDbConnection)">
+            <summary>
+            根据Connection建立Transaction
+            </summary>
+            <param name="iConn">Connection对象</param>
+            <returns>Transaction对象</returns>
+        </member>
+        <member name="M:CML.PkgDatabase.DatabaseBase.DatabaseOracle.CreateDataParameter(System.Data.IDbCommand)">
+            <summary>
+            根据Command对象建立DataReader
+            </summary>
+            <param name="iCmd">Command对象</param>
+            <returns>DataReader对象</returns>
+        </member>
+        <member name="T:CML.PkgDatabase.DatabaseBase.DatabaseSqlServer">
+            <summary>
+            SQL SERVER 数据库操作类
+            </summary>
+        </member>
+        <member name="P:CML.PkgDatabase.DatabaseBase.DatabaseSqlServer.ConnectionString">
+            <summary>
+            SQL SERVER 数据库连接字符串
+            </summary>
+        </member>
+        <member name="P:CML.PkgDatabase.DatabaseBase.DatabaseSqlServer.RuntimeDepend">
+            <summary>
+            运行依赖
+            </summary>
+        </member>
+        <member name="M:CML.PkgDatabase.DatabaseBase.DatabaseSqlServer.CreateConnection">
+            <summary>
+            建立Connection对象
+            </summary>
+            <returns>Connection对象</returns>
+        </member>
+        <member name="M:CML.PkgDatabase.DatabaseBase.DatabaseSqlServer.CreateConnection(System.String)">
+            <summary>
+            根据连接字符串建立Connection对象
+            </summary>
+            <param name="strConn">连接字符串</param>
+            <returns>Connection对象</returns>
+        </member>
+        <member name="M:CML.PkgDatabase.DatabaseBase.DatabaseSqlServer.CreateCommand">
+            <summary>
+            建立Command对象
+            </summary>
+            <returns>Command对象</returns>
+        </member>
+        <member name="M:CML.PkgDatabase.DatabaseBase.DatabaseSqlServer.CreateDataAdapter">
+            <summary>
+            建立DataAdapter对象
+            </summary>
+            <returns>DataAdapter对象</returns>
+        </member>
+        <member name="M:CML.PkgDatabase.DatabaseBase.DatabaseSqlServer.CreateTransaction(System.Data.IDbConnection)">
+            <summary>
+            根据Connection建立Transaction
+            </summary>
+            <param name="iConn">Connection对象</param>
+            <returns>Transaction对象</returns>
+        </member>
+        <member name="M:CML.PkgDatabase.DatabaseBase.DatabaseSqlServer.CreateDataParameter(System.Data.IDbCommand)">
+            <summary>
+            根据Command对象建立DataReader
+            </summary>
+            <param name="iCmd">Command对象</param>
+            <returns>DataReader对象</returns>
+        </member>
+        <member name="T:CML.PkgDatabase.DatabaseBase.IDatabaseBase">
+            <summary>
+            数据库底层接口
+            </summary>
+        </member>
+        <member name="P:CML.PkgDatabase.DatabaseBase.IDatabaseBase.ConnectionString">
+            <summary>
+            数据库连接字符串
+            </summary>
+        </member>
+        <member name="P:CML.PkgDatabase.DatabaseBase.IDatabaseBase.RuntimeDepend">
+            <summary>
+            运行依赖
+            </summary>
+        </member>
+        <member name="M:CML.PkgDatabase.DatabaseBase.IDatabaseBase.CreateConnection">
+            <summary>
+            建立Connection对象
+            </summary>
+            <returns>Connection对象</returns>
+        </member>
+        <member name="M:CML.PkgDatabase.DatabaseBase.IDatabaseBase.CreateConnection(System.String)">
+            <summary>
+            根据连接字符串建立Connection对象
+            </summary>
+            <param name="strConn">连接字符串</param>
+            <returns>Connection对象</returns>
+        </member>
+        <member name="M:CML.PkgDatabase.DatabaseBase.IDatabaseBase.CreateCommand">
+            <summary>
+            建立Command对象
+            </summary>
+            <returns>Command对象</returns>
+        </member>
+        <member name="M:CML.PkgDatabase.DatabaseBase.IDatabaseBase.CreateDataAdapter">
+            <summary>
+            建立DataAdapter对象
+            </summary>
+            <returns>DataAdapter对象</returns>
+        </member>
+        <member name="M:CML.PkgDatabase.DatabaseBase.IDatabaseBase.CreateTransaction(System.Data.IDbConnection)">
+            <summary>
+            根据Connection建立Transaction
+            </summary>
+            <param name="iConn">Connection对象</param>
+            <returns>Transaction对象</returns>
+        </member>
+        <member name="M:CML.PkgDatabase.DatabaseBase.IDatabaseBase.CreateDataParameter(System.Data.IDbCommand)">
+            <summary>
+            根据Command对象建立DataReader
+            </summary>
+            <param name="iCmd">Command对象</param>
+            <returns>DataReader对象</returns>
+        </member>
+        <member name="T:CML.PkgDatabase.EDatabaseType">
+            <summary>
+            数据库类型
+            </summary>
+        </member>
+        <member name="F:CML.PkgDatabase.EDatabaseType.NONE">
+            <summary>
+            未选择数据库
+            </summary>
+        </member>
+        <member name="F:CML.PkgDatabase.EDatabaseType.ACCESS">
+            <summary>
+            ACCESS数据库
+            </summary>
+        </member>
+        <member name="F:CML.PkgDatabase.EDatabaseType.MYSQL">
+            <summary>
+            MYSQL数据库（需要引用[MySql.Data]NuGet项目或[MySql.Data.dll]文件）
+            </summary>
+        </member>
+        <member name="F:CML.PkgDatabase.EDatabaseType.ORACLE">
+            <summary>
+            ORACLE数据库（需要引用[Oracle.ManagedDataAccess]NuGet项目或[Oracle.ManagedDataAccess.dll]文件）
+            </summary>
+        </member>
+        <member name="F:CML.PkgDatabase.EDatabaseType.SQLSERVER">
+            <summary>
+            SQL SERVER数据库
+            </summary>
+        </member>
+        <member name="T:CML.PkgDatabase.MDataParameter">
+            <summary>
+            数据传输参数模型
+            </summary>
+        </member>
+        <member name="P:CML.PkgDatabase.MDataParameter.Name">
+            <summary>
+            参数名
+            </summary>
+        </member>
+        <member name="P:CML.PkgDatabase.MDataParameter.Value">
+            <summary>
+            参数值
+            </summary>
+        </member>
+        <member name="P:CML.PkgDatabase.MDataParameter.DataType">
+            <summary>
+            数据类型
+            </summary>
+        </member>
+        <member name="M:CML.PkgDatabase.MDataParameter.#ctor(System.String,System.Object,System.Data.DbType)">
+            <summary>
+            数据传输参数
+            </summary>
+            <param name="name">参数名</param>
+            <param name="value">参数值</param>
+            <param name="type">数据类型</param>
+        </member>
+        <member name="T:CML.PkgDatabase.MTransactionParameter">
+            <summary>
+            事务执行参数模型
+            </summary>
+        </member>
+        <member name="P:CML.PkgDatabase.MTransactionParameter.SqlString">
+            <summary>
+            SQL语句
+            </summary>
+        </member>
+        <member name="P:CML.PkgDatabase.MTransactionParameter.Parameters">
+            <summary>
+            SQL语句参数数组
+            </summary>
+        </member>
+        <member name="M:CML.PkgDatabase.MTransactionParameter.#ctor(System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="strSql">SQL语句</param>
+        </member>
+        <member name="M:CML.PkgDatabase.MTransactionParameter.#ctor(System.String,CML.PkgDatabase.MDataParameter[])">
+            <summary>
+            构造函数
+            </summary>
+            <param name="strSql">SQL语句</param>
+            <param name="parameters">参数数组</param>
+        </member>
+        <member name="M:CML.PkgDatabase.MTransactionParameter.#ctor(System.String,System.Collections.Generic.List{CML.PkgDatabase.MDataParameter})">
+            <summary>
+            构造函数
+            </summary>
+            <param name="strSql">SQL语句</param>
+            <param name="parameters">参数列表</param>
+        </member>
+        <member name="T:CML.PkgDatabase.VersionInfo">
+            <summary>
+            数据库操作工具包版本信息
+            </summary>
+        </member>
+        <member name="P:CML.PkgDatabase.VersionInfo.VerMain">
+            <summary>
+            主版本号
+            </summary>
+        </member>
+        <member name="P:CML.PkgDatabase.VersionInfo.VerDev">
+            <summary>
+            研发版本号
+            </summary>
+        </member>
+        <member name="P:CML.PkgDatabase.VersionInfo.VerDate">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="P:CML.PkgDatabase.VersionInfo.RunAssembly">
+            <summary>
+            当前程序集 
+            </summary>
+        </member>
+        <member name="M:CML.PkgDatabase.VersionInfo.GetVersionInfo">
+            <summary>
+            获得版本信息
+            </summary>
+            <returns>版本信息</returns>
+        </member>
         <member name="T:CML.PkgResult.TResult`1">
             <summary>
             泛型操作结果类

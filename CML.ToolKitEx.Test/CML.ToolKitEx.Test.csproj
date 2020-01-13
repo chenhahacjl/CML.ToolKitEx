@@ -41,10 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PkgResult.cs" />
-    <Compile Include="PkgSingleton.cs" />
-    <Compile Include="ToolkitTestBase.cs" />
-    <Compile Include="PkgVersion.cs" />
+    <Compile Include="PkgTest\PkgDatabase.cs" />
+    <Compile Include="PkgTest\PkgResult.cs" />
+    <Compile Include="PkgTest\PkgSingleton.cs" />
+    <Compile Include="PkgTestBase.cs" />
+    <Compile Include="PkgTest\PkgVersion.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -8,9 +8,10 @@ namespace CML.ToolKitEx.Test
     /// 【请重载 ClassName 属性】
     /// 【请重载 UpdateDate 属性】
     /// 【请重载 VersionInfo 属性】
+    /// 【请重载 UpdateInfo 属性】
     /// 【请重载 ExecuteTest() 方法】
     /// </summary>
-    internal class ToolkitTestBase
+    internal class PkgTestBase
     {
         /// <summary>
         /// 测试类名【请重载此属性】
@@ -26,6 +27,11 @@ namespace CML.ToolKitEx.Test
         /// 版本信息【请重载此属性】
         /// </summary>
         public virtual string VersionInfo => "请重载 PkgTestBase 类 VersionInfo 属性";
+
+        /// <summary>
+        /// 更新信息【请重载此属性】
+        /// </summary>
+        public virtual string UpdateInfo => "请重载 PkgTestBase 类 UpdateInfo 属性";
 
         /// <summary>
         /// 执行测试【请重载此方法】
