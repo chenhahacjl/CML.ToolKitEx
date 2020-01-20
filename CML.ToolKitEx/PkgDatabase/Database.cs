@@ -8,7 +8,7 @@ using System.IO;
 namespace CML.PkgDatabase
 {
     /// <summary>
-    /// 数据库帮助类
+    /// 数据库操作类
     /// </summary>
     public class Database
     {

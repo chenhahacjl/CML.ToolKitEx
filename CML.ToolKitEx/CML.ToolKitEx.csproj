@@ -43,6 +43,8 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -60,10 +62,28 @@
     <Compile Include="PkgDatabase\Model\MDataParameter.cs" />
     <Compile Include="PkgDatabase\Model\MTransactionParameter.cs" />
     <Compile Include="PkgDatabase\VersionControl\VersionInfo.cs" />
+    <Compile Include="PkgDingTalk\DingTalkRobot.cs" />
+    <Compile Include="PkgDingTalk\Model\SendMessage\MFeedCardMsg.cs" />
+    <Compile Include="PkgDingTalk\Model\SendMessage\MLinkMsg.cs" />
+    <Compile Include="PkgDingTalk\Model\SendMessage\MMarkdownMsg.cs" />
+    <Compile Include="PkgDingTalk\Model\SendMessage\MMultiActionCardMsg.cs" />
+    <Compile Include="PkgDingTalk\Model\MReceiveMsg.cs" />
+    <Compile Include="PkgDingTalk\Model\SendMessage\MSendMsgBase.cs" />
+    <Compile Include="PkgDingTalk\Model\SendMessage\MSingleActionCardMsg.cs" />
+    <Compile Include="PkgDingTalk\Model\SendMessage\MTextMsg.cs" />
+    <Compile Include="PkgDingTalk\VersionControl\VersionInfo.cs" />
     <Compile Include="PkgEmail\Email.cs" />
     <Compile Include="PkgEmail\Model\MEmailInfo.cs" />
     <Compile Include="PkgEmail\Model\MServerInfo.cs" />
     <Compile Include="PkgEmail\VersionControl\VersionInfo.cs" />
+    <Compile Include="PkgNetwork\Enum\ERequestMethod.cs" />
+    <Compile Include="PkgNetwork\Enum\ESpeedUnit.cs" />
+    <Compile Include="PkgNetwork\Model\MProxy.cs" />
+    <Compile Include="PkgNetwork\Model\MWebRequest.cs" />
+    <Compile Include="PkgNetwork\Model\MTransSpeed.cs" />
+    <Compile Include="PkgNetwork\NetworkHelper.cs" />
+    <Compile Include="PkgNetwork\UserAgentHelper.cs" />
+    <Compile Include="PkgNetwork\VersionControl\VersionInfo.cs" />
     <Compile Include="PkgResult\TResult.cs" />
     <Compile Include="PkgResult\TResultBase.cs" />
     <Compile Include="PkgResult\VersionControl\VersionInfo.cs" />
@@ -91,6 +111,13 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="PkgEmail\VersionControl\UpdateInfo.LOG" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="PkgDingTalk\VersionControl\UpdateInfo.LOG" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="PkgNetwork\VersionControl\UpdateInfo.LOG" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

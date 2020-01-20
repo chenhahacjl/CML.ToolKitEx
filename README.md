@@ -21,11 +21,17 @@ CML.ToolKitEx是一个基于C#的编程工具包，其中包含数据库操作�
 
 ## 当前进度
 - [ ] PkgDatabase <数据库操作工具包>
-	- [x] Database <数据库帮助类>
+	- [x] Database <数据库操作类>
+- [ ] PkgDingTalk <钉钉操作工具包>
+	- [x] DingTalkRobot <钉钉群自定义机器人操作类>
 - [ ] PkgEmail <EMAIL操作工具包>
 	- [x] Email <Email操作类>
 	- [x] EmailE <Email操作类-扩展方法>
 	- [x] EmailS <Email操作类-静态方法>
+- [ ] PkgNetwork <网络操作工具包>
+	- [x] NetworkHelper <网络帮助类>
+	- [x] NetworkHelperE <网络帮助类-扩展方法>
+	- [x] UserAgentHelper <UserAgent帮助类>
 - [ ] PkgResult <泛型结果工具包>
 	- [x] TResultBase <操作结果基础类>
 	- [x] TResult <泛型操作结果类>

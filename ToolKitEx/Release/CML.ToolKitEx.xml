@@ -6,7 +6,7 @@
     <members>
         <member name="T:CML.PkgDatabase.Database">
             <summary>
-            数据库帮助类
+            数据库操作类
             </summary>
         </member>
         <member name="F:CML.PkgDatabase.Database.m_iDatabaseBase">
@@ -586,6 +586,584 @@
             </summary>
             <returns>版本信息</returns>
         </member>
+        <member name="T:CML.PkgDingTalk.DingTalkRobot">
+            <summary>
+            钉钉群自定义机器人操作类
+            </summary>
+        </member>
+        <member name="P:CML.PkgDingTalk.DingTalkRobot.AccessToken">
+            <summary>
+            AccessToken
+            </summary>
+        </member>
+        <member name="P:CML.PkgDingTalk.DingTalkRobot.Secret">
+            <summary>
+            Secret
+            </summary>
+        </member>
+        <member name="M:CML.PkgDingTalk.DingTalkRobot.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:CML.PkgDingTalk.DingTalkRobot.#ctor(System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="accessToken">AccessToken</param>
+        </member>
+        <member name="M:CML.PkgDingTalk.DingTalkRobot.#ctor(System.String,System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="accessToken">AccessToken</param>
+            <param name="secret">Secret</param>
+        </member>
+        <member name="M:CML.PkgDingTalk.DingTalkRobot.SerializeObject(System.Object)">
+            <summary>
+            序列化实体
+            </summary>
+            <param name="obj">实体</param>
+            <returns>字符串</returns>
+        </member>
+        <member name="M:CML.PkgDingTalk.DingTalkRobot.DeserializeObject``1(System.String)">
+            <summary>
+            反序列化字符串
+            </summary>
+            <param name="json">字符串</param>
+            <returns>实体</returns>
+        </member>
+        <member name="M:CML.PkgDingTalk.DingTalkRobot.SendMessage(CML.PkgDingTalk.Model.MSendMsgBase)">
+            <summary>
+            发送消息
+            </summary>
+            <param name="sendMessage">消息内容</param>
+            <returns>发送结果</returns>
+        </member>
+        <member name="T:CML.PkgDingTalk.MFeedCardMsg">
+            <summary>
+            FeedCard类型消息
+            </summary>
+        </member>
+        <member name="P:CML.PkgDingTalk.MFeedCardMsg.msgtype">
+            <summary>
+            消息类型（feedCard）
+            </summary>
+        </member>
+        <member name="P:CML.PkgDingTalk.MFeedCardMsg.feedCard">
+            <summary>
+            feedCard设置
+            </summary>
+        </member>
+        <member name="T:CML.PkgDingTalk.MFeedCardMsg.FeedCardSetting">
+            <summary>
+            feedCard设置
+            </summary>
+        </member>
+        <member name="P:CML.PkgDingTalk.MFeedCardMsg.FeedCardSetting.links">
+            <summary>
+            links设置
+            </summary>
+        </member>
+        <member name="M:CML.PkgDingTalk.MFeedCardMsg.FeedCardSetting.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:CML.PkgDingTalk.MFeedCardMsg.FeedCardSetting.#ctor(CML.PkgDingTalk.MFeedCardMsg.LinksSetting[])">
+            <summary>
+            构造函数
+            </summary>
+            <param name="_links">links设置</param>
+        </member>
+        <member name="T:CML.PkgDingTalk.MFeedCardMsg.LinksSetting">
+            <summary>
+            links设置
+            </summary>
+        </member>
+        <member name="P:CML.PkgDingTalk.MFeedCardMsg.LinksSetting.title">
+            <summary>
+            单条信息文本
+            </summary>
+        </member>
+        <member name="P:CML.PkgDingTalk.MFeedCardMsg.LinksSetting.messageURL">
+            <summary>
+            点击单条信息到跳转链接
+            </summary>
+        </member>
+        <member name="P:CML.PkgDingTalk.MFeedCardMsg.LinksSetting.picURL">
+            <summary>
+            单条信息后面图片的URL
+            </summary>
+        </member>
+        <member name="M:CML.PkgDingTalk.MFeedCardMsg.LinksSetting.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:CML.PkgDingTalk.MFeedCardMsg.LinksSetting.#ctor(System.String,System.String,System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="_title">单条信息文本</param>
+            <param name="_messageURL">点击单条信息到跳转链接</param>
+            <param name="_picURL">单条信息后面图片的URL</param>
+        </member>
+        <member name="T:CML.PkgDingTalk.MLinkMsg">
+            <summary>
+            link类型消息
+            </summary>
+        </member>
+        <member name="P:CML.PkgDingTalk.MLinkMsg.msgtype">
+            <summary>
+            消息类型（link）
+            </summary>
+        </member>
+        <member name="P:CML.PkgDingTalk.MLinkMsg.link">
+            <summary>
+            link设置
+            </summary>
+        </member>
+        <member name="T:CML.PkgDingTalk.MLinkMsg.LinkSetting">
+            <summary>
+            link设置
+            </summary>
+        </member>
+        <member name="P:CML.PkgDingTalk.MLinkMsg.LinkSetting.title">
+            <summary>
+            消息标题
+            </summary>
+        </member>
+        <member name="P:CML.PkgDingTalk.MLinkMsg.LinkSetting.text">
+            <summary>
+            消息内容。如果太长只会部分展示
+            </summary>
+        </member>
+        <member name="P:CML.PkgDingTalk.MLinkMsg.LinkSetting.messageUrl">
+            <summary>
+            点击消息跳转的URL
+            </summary>
+        </member>
+        <member name="P:CML.PkgDingTalk.MLinkMsg.LinkSetting.picUrl">
+            <summary>
+            图片URL
+            </summary>
+        </member>
+        <member name="M:CML.PkgDingTalk.MLinkMsg.LinkSetting.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:CML.PkgDingTalk.MLinkMsg.LinkSetting.#ctor(System.String,System.String,System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="_title">消息标题</param>
+            <param name="_text">消息内容。如果太长只会部分展示</param>
+            <param name="_messageUrl">点击消息跳转的URL</param>
+        </member>
+        <member name="M:CML.PkgDingTalk.MLinkMsg.LinkSetting.#ctor(System.String,System.String,System.String,System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="_title">消息标题</param>
+            <param name="_text">消息内容。如果太长只会部分展示</param>
+            <param name="_messageUrl">点击消息跳转的URL</param>
+            <param name="_picUrl">图片URL</param>
+        </member>
+        <member name="T:CML.PkgDingTalk.MMarkdownMsg">
+            <summary>
+            markdown类型消息
+            </summary>
+        </member>
+        <member name="P:CML.PkgDingTalk.MMarkdownMsg.msgtype">
+            <summary>
+            消息类型（markdown）
+            </summary>
+        </member>
+        <member name="P:CML.PkgDingTalk.MMarkdownMsg.markdown">
+            <summary>
+            markdown设置    
+            </summary>
+        </member>
+        <member name="P:CML.PkgDingTalk.MMarkdownMsg.at">
+            <summary>
+            @设置
+            </summary>
+        </member>
+        <member name="T:CML.PkgDingTalk.MMarkdownMsg.MarkdownSetting">
+            <summary>
+            markdown设置    
+            </summary>
+        </member>
+        <member name="P:CML.PkgDingTalk.MMarkdownMsg.MarkdownSetting.title">
+            <summary>
+            首屏会话透出的展示内容
+            </summary>
+        </member>
+        <member name="P:CML.PkgDingTalk.MMarkdownMsg.MarkdownSetting.text">
+            <summary>
+            markdown格式的消息
+            </summary>
+        </member>
+        <member name="M:CML.PkgDingTalk.MMarkdownMsg.MarkdownSetting.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:CML.PkgDingTalk.MMarkdownMsg.MarkdownSetting.#ctor(System.String,System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="_title">首屏会话透出的展示内容</param>
+            <param name="_text">markdown格式的消息</param>
+        </member>
+        <member name="T:CML.PkgDingTalk.MMarkdownMsg.AtSetting">
+            <summary>
+            @设置
+            </summary>
+        </member>
+        <member name="P:CML.PkgDingTalk.MMarkdownMsg.AtSetting.atMobiles">
+            <summary>
+            被@人的手机号(在content里添加@人的手机号)
+            </summary>
+        </member>
+        <member name="P:CML.PkgDingTalk.MMarkdownMsg.AtSetting.isAtAll">
+            <summary>
+            @所有人时：true，否则为：false
+            </summary>
+        </member>
+        <member name="M:CML.PkgDingTalk.MMarkdownMsg.AtSetting.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:CML.PkgDingTalk.MMarkdownMsg.AtSetting.#ctor(System.Boolean)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="_isAtAll">@所有人时：true，否则为：false</param>
+        </member>
+        <member name="M:CML.PkgDingTalk.MMarkdownMsg.AtSetting.#ctor(System.String[],System.Boolean)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="_atMobiles">被@人的手机号(在content里添加@人的手机号)</param>
+            <param name="_isAtAll">@所有人时：true，否则为：false</param>
+        </member>
+        <member name="T:CML.PkgDingTalk.MMultiActionCardMsg">
+            <summary>
+            独立跳转ActionCard类型消息
+            </summary>
+        </member>
+        <member name="P:CML.PkgDingTalk.MMultiActionCardMsg.msgtype">
+            <summary>
+            消息类型（actionCard）
+            </summary>
+        </member>
+        <member name="P:CML.PkgDingTalk.MMultiActionCardMsg.actionCard">
+            <summary>
+            actionCard设置
+            </summary>
+        </member>
+        <member name="T:CML.PkgDingTalk.MMultiActionCardMsg.ActionCardSetting">
+            <summary>
+            actionCard设置
+            </summary>
+        </member>
+        <member name="P:CML.PkgDingTalk.MMultiActionCardMsg.ActionCardSetting.title">
+            <summary>
+            首屏会话透出的展示内容
+            </summary>
+        </member>
+        <member name="P:CML.PkgDingTalk.MMultiActionCardMsg.ActionCardSetting.text">
+            <summary>
+            markdown格式的消息
+            </summary>
+        </member>
+        <member name="P:CML.PkgDingTalk.MMultiActionCardMsg.ActionCardSetting.btns">
+            <summary>
+            btns设置
+            </summary>
+        </member>
+        <member name="P:CML.PkgDingTalk.MMultiActionCardMsg.ActionCardSetting.btnOrientation">
+            <summary>
+            0-按钮竖直排列，1-按钮横向排列
+            </summary>
+        </member>
+        <member name="P:CML.PkgDingTalk.MMultiActionCardMsg.ActionCardSetting.hideAvatar">
+            <summary>
+            0-正常发消息者头像，1-隐藏发消息者头像
+            </summary>
+        </member>
+        <member name="M:CML.PkgDingTalk.MMultiActionCardMsg.ActionCardSetting.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:CML.PkgDingTalk.MMultiActionCardMsg.ActionCardSetting.#ctor(System.String,System.String,CML.PkgDingTalk.MMultiActionCardMsg.ButtonSetting[])">
+            <summary>
+            构造函数
+            </summary>
+            <param name="_title">首屏会话透出的展示内容</param>
+            <param name="_text">markdown格式的消息</param>
+            <param name="_btns">btns设置</param>
+        </member>
+        <member name="M:CML.PkgDingTalk.MMultiActionCardMsg.ActionCardSetting.#ctor(System.String,System.String,CML.PkgDingTalk.MMultiActionCardMsg.ButtonSetting[],System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="_title">首屏会话透出的展示内容</param>
+            <param name="_text">markdown格式的消息</param>
+            <param name="_btns">btns设置</param>
+            <param name="_btnOrientation">0-按钮竖直排列，1-按钮横向排列</param>
+        </member>
+        <member name="M:CML.PkgDingTalk.MMultiActionCardMsg.ActionCardSetting.#ctor(System.String,System.String,CML.PkgDingTalk.MMultiActionCardMsg.ButtonSetting[],System.String,System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="_title">首屏会话透出的展示内容</param>
+            <param name="_text">markdown格式的消息</param>
+            <param name="_btns">btns设置</param>
+            <param name="_btnOrientation">0-按钮竖直排列，1-按钮横向排列</param>
+            <param name="_hideAvatar">0-正常发消息者头像，1-隐藏发消息者头像</param>
+        </member>
+        <member name="T:CML.PkgDingTalk.MMultiActionCardMsg.ButtonSetting">
+            <summary>
+            btns设置
+            </summary>
+        </member>
+        <member name="P:CML.PkgDingTalk.MMultiActionCardMsg.ButtonSetting.title">
+            <summary>
+            按钮方案
+            </summary>
+        </member>
+        <member name="P:CML.PkgDingTalk.MMultiActionCardMsg.ButtonSetting.actionURL">
+            <summary>
+            点击按钮触发的URL
+            </summary>
+        </member>
+        <member name="M:CML.PkgDingTalk.MMultiActionCardMsg.ButtonSetting.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:CML.PkgDingTalk.MMultiActionCardMsg.ButtonSetting.#ctor(System.String,System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="_title">按钮方案</param>
+            <param name="_actionURL">点击按钮触发的URL</param>
+        </member>
+        <member name="T:CML.PkgDingTalk.Model.MReceiveMsg">
+            <summary>
+            接收消息
+            </summary>
+        </member>
+        <member name="P:CML.PkgDingTalk.Model.MReceiveMsg.errcode">
+            <summary>
+            错误代码
+            </summary>
+        </member>
+        <member name="P:CML.PkgDingTalk.Model.MReceiveMsg.errmsg">
+            <summary>
+            错误消息
+            </summary>
+        </member>
+        <member name="T:CML.PkgDingTalk.Model.MSendMsgBase">
+            <summary>
+            发送消息基类
+            </summary>
+        </member>
+        <member name="F:CML.PkgDingTalk.Model.MSendMsgBase.MessageUrl">
+            <summary>
+            范例消息URL
+            </summary>
+        </member>
+        <member name="F:CML.PkgDingTalk.Model.MSendMsgBase.ImageUrl">
+            <summary>
+            范例图片URL
+            </summary>
+        </member>
+        <member name="P:CML.PkgDingTalk.Model.MSendMsgBase.msgtype">
+            <summary>
+            消息类型
+            </summary>
+        </member>
+        <member name="T:CML.PkgDingTalk.MSingleActionCardMsg">
+            <summary>
+            整体跳转ActionCard类型消息
+            </summary>
+        </member>
+        <member name="P:CML.PkgDingTalk.MSingleActionCardMsg.msgtype">
+            <summary>
+            消息类型（actionCard）
+            </summary>
+        </member>
+        <member name="P:CML.PkgDingTalk.MSingleActionCardMsg.actionCard">
+            <summary>
+            actionCard设置
+            </summary>
+        </member>
+        <member name="T:CML.PkgDingTalk.MSingleActionCardMsg.ActionCardSetting">
+            <summary>
+            actionCard设置
+            </summary>
+        </member>
+        <member name="P:CML.PkgDingTalk.MSingleActionCardMsg.ActionCardSetting.title">
+            <summary>
+            首屏会话透出的展示内容
+            </summary>
+        </member>
+        <member name="P:CML.PkgDingTalk.MSingleActionCardMsg.ActionCardSetting.text">
+            <summary>
+            markdown格式的消息
+            </summary>
+        </member>
+        <member name="P:CML.PkgDingTalk.MSingleActionCardMsg.ActionCardSetting.singleTitle">
+            <summary>
+            单个按钮的方案。
+            </summary>
+        </member>
+        <member name="P:CML.PkgDingTalk.MSingleActionCardMsg.ActionCardSetting.singleURL">
+            <summary>
+            点击singleTitle按钮触发的URL
+            </summary>
+        </member>
+        <member name="P:CML.PkgDingTalk.MSingleActionCardMsg.ActionCardSetting.hideAvatar">
+            <summary>
+            0-正常发消息者头像，1-隐藏发消息者头像
+            </summary>
+        </member>
+        <member name="M:CML.PkgDingTalk.MSingleActionCardMsg.ActionCardSetting.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:CML.PkgDingTalk.MSingleActionCardMsg.ActionCardSetting.#ctor(System.String,System.String,System.String,System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="_title">首屏会话透出的展示内容</param>
+            <param name="_text">markdown格式的消息</param>
+            <param name="_singleTitle">单个按钮的方案</param>
+            <param name="_singleURL">点击singleTitle按钮触发的URL</param>
+        </member>
+        <member name="M:CML.PkgDingTalk.MSingleActionCardMsg.ActionCardSetting.#ctor(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="_title">首屏会话透出的展示内容</param>
+            <param name="_text">markdown格式的消息</param>
+            <param name="_singleTitle">单个按钮的方案</param>
+            <param name="_singleURL">点击singleTitle按钮触发的URL</param>
+            <param name="_hideAvatar">0-正常发消息者头像，1-隐藏发消息者头像</param>
+        </member>
+        <member name="T:CML.PkgDingTalk.MTextMsg">
+            <summary>
+            text类型消息
+            </summary>
+        </member>
+        <member name="P:CML.PkgDingTalk.MTextMsg.msgtype">
+            <summary>
+            消息类型（text）
+            </summary>
+        </member>
+        <member name="P:CML.PkgDingTalk.MTextMsg.text">
+            <summary>
+            text设置    
+            </summary>
+        </member>
+        <member name="P:CML.PkgDingTalk.MTextMsg.at">
+            <summary>
+            @设置
+            </summary>
+        </member>
+        <member name="T:CML.PkgDingTalk.MTextMsg.TextSetting">
+            <summary>
+            text设置
+            </summary>
+        </member>
+        <member name="P:CML.PkgDingTalk.MTextMsg.TextSetting.content">
+            <summary>
+            消息内容
+            </summary>
+        </member>
+        <member name="M:CML.PkgDingTalk.MTextMsg.TextSetting.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:CML.PkgDingTalk.MTextMsg.TextSetting.#ctor(System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="_content">消息类型</param>
+        </member>
+        <member name="T:CML.PkgDingTalk.MTextMsg.AtSetting">
+            <summary>
+            @设置
+            </summary>
+        </member>
+        <member name="P:CML.PkgDingTalk.MTextMsg.AtSetting.atMobiles">
+            <summary>
+            被@人的手机号(在content里添加@人的手机号)
+            </summary>
+        </member>
+        <member name="P:CML.PkgDingTalk.MTextMsg.AtSetting.isAtAll">
+            <summary>
+            @所有人时：true，否则为：false
+            </summary>
+        </member>
+        <member name="M:CML.PkgDingTalk.MTextMsg.AtSetting.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:CML.PkgDingTalk.MTextMsg.AtSetting.#ctor(System.Boolean)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="_isAtAll">@所有人时：true，否则为：false</param>
+        </member>
+        <member name="M:CML.PkgDingTalk.MTextMsg.AtSetting.#ctor(System.String[],System.Boolean)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="_atMobiles">被@人的手机号(在content里添加@人的手机号)</param>
+            <param name="_isAtAll">@所有人时：true，否则为：false</param>
+        </member>
+        <member name="T:CML.PkgDingTalk.VersionInfo">
+            <summary>
+            钉钉操作工具包版本信息
+            </summary>
+        </member>
+        <member name="P:CML.PkgDingTalk.VersionInfo.VerMain">
+            <summary>
+            主版本号
+            </summary>
+        </member>
+        <member name="P:CML.PkgDingTalk.VersionInfo.VerDev">
+            <summary>
+            研发版本号
+            </summary>
+        </member>
+        <member name="P:CML.PkgDingTalk.VersionInfo.VerDate">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="P:CML.PkgDingTalk.VersionInfo.RunAssembly">
+            <summary>
+            当前程序集 
+            </summary>
+        </member>
+        <member name="M:CML.PkgDingTalk.VersionInfo.GetVersionInfo">
+            <summary>
+            获得版本信息
+            </summary>
+            <returns>版本信息</returns>
+        </member>
         <member name="T:CML.PkgEmail.Email">
             <summary>
             Email操作类
@@ -764,6 +1342,490 @@
             </summary>
         </member>
         <member name="M:CML.PkgEmail.VersionInfo.GetVersionInfo">
+            <summary>
+            获得版本信息
+            </summary>
+            <returns>版本信息</returns>
+        </member>
+        <member name="T:CML.PkgNetwork.ERequestMethod">
+            <summary>
+            请求方式
+            </summary>
+        </member>
+        <member name="F:CML.PkgNetwork.ERequestMethod.GET">
+            <summary>
+            GET方式
+            </summary>
+        </member>
+        <member name="F:CML.PkgNetwork.ERequestMethod.POST">
+            <summary>
+            POST方式
+            </summary>
+        </member>
+        <member name="T:CML.PkgNetwork.ESpeedUnit">
+            <summary>
+            传输速率单位
+            </summary>
+        </member>
+        <member name="F:CML.PkgNetwork.ESpeedUnit.Byte">
+            <summary>
+            字节
+            </summary>
+        </member>
+        <member name="F:CML.PkgNetwork.ESpeedUnit.KB">
+            <summary>
+            千字节（2^10 Byte）
+            </summary>
+        </member>
+        <member name="F:CML.PkgNetwork.ESpeedUnit.MB">
+            <summary>
+            兆字节（2^20 Byte）
+            </summary>
+        </member>
+        <member name="F:CML.PkgNetwork.ESpeedUnit.GB">
+            <summary>
+            吉字节（2^30 Byte）
+            </summary>
+        </member>
+        <member name="F:CML.PkgNetwork.ESpeedUnit.TB">
+            <summary>
+            太字节（2^40 Byte）
+            </summary>
+        </member>
+        <member name="T:CML.PkgNetwork.MProxy">
+            <summary>
+            代理
+            </summary>
+        </member>
+        <member name="P:CML.PkgNetwork.MProxy.Enable">
+            <summary>
+            是否启用代理
+            </summary>
+        </member>
+        <member name="P:CML.PkgNetwork.MProxy.Host">
+            <summary>
+            主机
+            </summary>
+        </member>
+        <member name="P:CML.PkgNetwork.MProxy.Port">
+            <summary>
+            端口
+            </summary>
+        </member>
+        <member name="M:CML.PkgNetwork.MProxy.#ctor">
+            <summary>
+            默认构造函数（不启用代理）
+            </summary>
+        </member>
+        <member name="M:CML.PkgNetwork.MProxy.#ctor(System.String,System.Int32)">
+            <summary>
+            构造函数（启用代理）
+            </summary>
+            <param name="host"></param>
+            <param name="port"></param>
+        </member>
+        <member name="T:CML.PkgNetwork.MWebRequest">
+            <summary>
+            请求模型
+            </summary>
+        </member>
+        <member name="P:CML.PkgNetwork.MWebRequest.RequestUrl">
+            <summary>
+            请求网址
+            </summary>
+        </member>
+        <member name="P:CML.PkgNetwork.MWebRequest.KeepAlive">
+            <summary>
+             请求完成之后是否保持连接（默认false）
+            </summary>
+        </member>
+        <member name="P:CML.PkgNetwork.MWebRequest.AllowAutoRedirect">
+            <summary>
+             允许自动重定向（默认false）
+            </summary>
+        </member>
+        <member name="P:CML.PkgNetwork.MWebRequest.Proxy">
+            <summary>
+            代理（默认不开启）
+            </summary>
+        </member>
+        <member name="P:CML.PkgNetwork.MWebRequest.TimeOut">
+            <summary>
+            超时时间（毫秒，默认1000毫秒）
+            </summary>
+        </member>
+        <member name="P:CML.PkgNetwork.MWebRequest.Method">
+            <summary>
+            请求方式（默认GET）
+            </summary>
+        </member>
+        <member name="P:CML.PkgNetwork.MWebRequest.ProtocolVersion">
+            <summary>
+            HTTP版本（默认Version10）
+            </summary>
+        </member>
+        <member name="P:CML.PkgNetwork.MWebRequest.Host">
+            <summary>
+            HTTP的Host请求头
+            </summary>
+        </member>
+        <member name="P:CML.PkgNetwork.MWebRequest.Accept">
+            <summary>
+            HTTP的Accept请求头
+            </summary>
+        </member>
+        <member name="P:CML.PkgNetwork.MWebRequest.Referer">
+            <summary>
+            HTTP的Referer请求头
+            </summary>
+        </member>
+        <member name="P:CML.PkgNetwork.MWebRequest.UserAgent">
+            <summary>
+            HTTP的UserAgent请求头
+            </summary>
+        </member>
+        <member name="P:CML.PkgNetwork.MWebRequest.ContentType">
+            <summary>
+            HTTP的ContentType请求头
+            </summary>
+        </member>
+        <member name="P:CML.PkgNetwork.MWebRequest.Headers">
+            <summary>
+            HTTP的请求头
+            </summary>
+        </member>
+        <member name="P:CML.PkgNetwork.MWebRequest.Cookie">
+            <summary>
+            Cookie字符串
+            </summary>
+        </member>
+        <member name="P:CML.PkgNetwork.MWebRequest.UploadSpeed">
+            <summary>
+            上传限速
+            </summary>
+        </member>
+        <member name="P:CML.PkgNetwork.MWebRequest.DownloadSpeed">
+            <summary>
+            下载限速
+            </summary>
+        </member>
+        <member name="P:CML.PkgNetwork.MWebRequest.Encoding">
+            <summary>
+            网页编码
+            </summary>
+        </member>
+        <member name="P:CML.PkgNetwork.MWebRequest.PostBytes">
+            <summary>
+            POST传输信息（优先级: PostBytes->PostString->PostDictionary）
+            </summary>
+        </member>
+        <member name="P:CML.PkgNetwork.MWebRequest.PostString">
+            <summary>
+            POST传输信息（优先级: PostBytes->PostString->PostDictionary）
+            </summary>
+        </member>
+        <member name="P:CML.PkgNetwork.MWebRequest.PostDictionary">
+            <summary>
+            POST传输信息（优先级: PostBytes->PostString->PostDictionary）
+            </summary>
+        </member>
+        <member name="T:CML.PkgNetwork.MTransSpeed">
+            <summary>
+            传输速率
+            </summary>
+        </member>
+        <member name="P:CML.PkgNetwork.MTransSpeed.Speed">
+            <summary>
+            传输速率值（数值大于0时启用）
+            </summary>
+        </member>
+        <member name="P:CML.PkgNetwork.MTransSpeed.Unit">
+            <summary>
+            传输速率单位
+            </summary>
+        </member>
+        <member name="P:CML.PkgNetwork.MTransSpeed.Delay">
+            <summary>
+            传输间隔毫秒数（默认为100MS）
+            </summary>
+        </member>
+        <member name="P:CML.PkgNetwork.MTransSpeed.EnableLimit">
+            <summary>
+            是否启用限速
+            </summary>
+        </member>
+        <member name="M:CML.PkgNetwork.MTransSpeed.#ctor">
+            <summary>
+            默认构造函数（不限速）
+            </summary>
+        </member>
+        <member name="M:CML.PkgNetwork.MTransSpeed.#ctor(System.Int32,CML.PkgNetwork.ESpeedUnit)">
+            <summary>
+            构造函数（默认延时100MS）
+            </summary>
+            <param name="speed">传输速率值（数值大于0时启用）</param>
+            <param name="unit">传输速率单位</param>
+        </member>
+        <member name="M:CML.PkgNetwork.MTransSpeed.#ctor(System.Int32,CML.PkgNetwork.ESpeedUnit,System.Int32)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="speed">传输速率值（数值大于0时启用）</param>
+            <param name="unit">传输速率单位</param>
+            <param name="delay">传输间隔毫秒数</param>
+        </member>
+        <member name="T:CML.PkgNetwork.NetworkHelper">
+            <summary>
+            网络帮助类
+            </summary>
+        </member>
+        <member name="M:CML.PkgNetwork.NetworkHelper.GetHtmlCode(CML.PkgNetwork.MWebRequest,System.Net.CookieContainer,System.Net.CookieContainer@)">
+            <summary>
+            获取HTML代码
+            </summary>
+            <param name="webRequest">WEB请求信息</param>
+            <param name="requestCookie">请求Cookie</param>
+            <param name="responseCookie">[OUT]响应Cookie</param>
+            <returns>HTML代码</returns>
+        </member>
+        <member name="M:CML.PkgNetwork.NetworkHelper.UploadFile(CML.PkgNetwork.MWebRequest,System.String,System.Net.CookieContainer,System.Net.CookieContainer@,System.String@)">
+            <summary>
+            上传文件
+            </summary>
+            <param name="webRequest">WEB请求信息</param>
+            <param name="filePath">文件路径</param>
+            <param name="requestCookie">请求Cookie</param>
+            <param name="responseCookie">[OUT]响应Cookie</param>
+            <param name="returnMsg">[OUT]返回消息</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:CML.PkgNetwork.NetworkHelper.DownloadFile(CML.PkgNetwork.MWebRequest,System.String,System.Net.CookieContainer,System.Net.CookieContainer@)">
+            <summary>
+            下载文件
+            </summary>
+            <param name="webRequest">WEB请求信息</param>
+            <param name="savePath">保存路径</param>
+            <param name="requestCookie">请求Cookie</param>
+            <param name="responseCookie">[OUT]响应Cookie</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:CML.PkgNetwork.NetworkHelper.GetWebStream(CML.PkgNetwork.MWebRequest,System.Net.CookieContainer,System.Net.CookieContainer@)">
+            <summary>
+            获取数据流
+            </summary>
+            <param name="webRequest">WEB请求信息</param>
+            <param name="requestCookie">请求Cookie</param>
+            <param name="responseCookie">[OUT]响应Cookie</param>
+            <returns>数据流</returns>
+        </member>
+        <member name="T:CML.PkgNetwork.NetworkHelperE">
+            <summary>
+            网络帮助类（扩展方法）
+            </summary>
+        </member>
+        <member name="M:CML.PkgNetwork.NetworkHelperE.GetHtmlCode(CML.PkgNetwork.MWebRequest)">
+            <summary>
+            获取HTML代码
+            </summary>
+            <param name="webRequest">WEB请求信息</param>
+            <returns>HTML代码</returns>
+        </member>
+        <member name="M:CML.PkgNetwork.NetworkHelperE.GetHtmlCode(CML.PkgNetwork.MWebRequest,System.Net.CookieContainer)">
+            <summary>
+            获取HTML代码
+            </summary>
+            <param name="webRequest">WEB请求信息</param>
+            <param name="requestCookie">请求Cookie</param>
+            <returns>HTML代码</returns>
+        </member>
+        <member name="M:CML.PkgNetwork.NetworkHelperE.GetHtmlCode(CML.PkgNetwork.MWebRequest,System.Net.CookieContainer@)">
+            <summary>
+            获取HTML代码
+            </summary>
+            <param name="webRequest">WEB请求信息</param>
+            <param name="responseCookie">[OUT]响应Cookie</param>
+            <returns>HTML代码</returns>
+        </member>
+        <member name="M:CML.PkgNetwork.NetworkHelperE.GetHtmlCode(CML.PkgNetwork.MWebRequest,System.Net.CookieContainer,System.Net.CookieContainer@)">
+            <summary>
+            获取HTML代码
+            </summary>
+            <param name="webRequest">WEB请求信息</param>
+            <param name="requestCookie">请求Cookie</param>
+            <param name="responseCookie">[OUT]响应Cookie</param>
+            <returns>HTML代码</returns>
+        </member>
+        <member name="M:CML.PkgNetwork.NetworkHelperE.UploadFile(CML.PkgNetwork.MWebRequest,System.String)">
+            <summary>
+            上传文件
+            </summary>
+            <param name="webRequest">WEB请求信息</param>
+            <param name="filePath">文件路径</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:CML.PkgNetwork.NetworkHelperE.UploadFile(CML.PkgNetwork.MWebRequest,System.String,System.String@)">
+            <summary>
+            上传文件
+            </summary>
+            <param name="webRequest">WEB请求信息</param>
+            <param name="filePath">文件路径</param>
+            <param name="returnMsg">[OUT]返回消息</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:CML.PkgNetwork.NetworkHelperE.UploadFile(CML.PkgNetwork.MWebRequest,System.String,System.Net.CookieContainer)">
+            <summary>
+            上传文件
+            </summary>
+            <param name="webRequest">WEB请求信息</param>
+            <param name="filePath">文件路径</param>
+            <param name="requestCookie">请求Cookie</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:CML.PkgNetwork.NetworkHelperE.UploadFile(CML.PkgNetwork.MWebRequest,System.String,System.Net.CookieContainer,System.String@)">
+            <summary>
+            上传文件
+            </summary>
+            <param name="webRequest">WEB请求信息</param>
+            <param name="filePath">文件路径</param>
+            <param name="requestCookie">请求Cookie</param>
+            <param name="returnMsg">[OUT]返回消息</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:CML.PkgNetwork.NetworkHelperE.UploadFile(CML.PkgNetwork.MWebRequest,System.String,System.Net.CookieContainer@)">
+            <summary>
+            上传文件
+            </summary>
+            <param name="webRequest">WEB请求信息</param>
+            <param name="filePath">文件路径</param>
+            <param name="responseCookie">[OUT]响应Cookie</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:CML.PkgNetwork.NetworkHelperE.UploadFile(CML.PkgNetwork.MWebRequest,System.String,System.Net.CookieContainer@,System.String@)">
+            <summary>
+            上传文件
+            </summary>
+            <param name="webRequest">WEB请求信息</param>
+            <param name="filePath">文件路径</param>
+            <param name="responseCookie">[OUT]响应Cookie</param>
+            <param name="returnMsg">[OUT]返回消息</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:CML.PkgNetwork.NetworkHelperE.UploadFile(CML.PkgNetwork.MWebRequest,System.String,System.Net.CookieContainer,System.Net.CookieContainer@,System.String@)">
+            <summary>
+            上传文件
+            </summary>
+            <param name="webRequest">WEB请求信息</param>
+            <param name="filePath">文件路径</param>
+            <param name="requestCookie">请求Cookie</param>
+            <param name="responseCookie">[OUT]响应Cookie</param>
+            <param name="returnMsg">[OUT]返回消息</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:CML.PkgNetwork.NetworkHelperE.DownloadFile(CML.PkgNetwork.MWebRequest,System.String)">
+            <summary>
+            下载文件
+            </summary>
+            <param name="webRequest">WEB请求信息</param>
+            <param name="savePath">保存路径</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:CML.PkgNetwork.NetworkHelperE.DownloadFile(CML.PkgNetwork.MWebRequest,System.String,System.Net.CookieContainer)">
+            <summary>
+            下载文件
+            </summary>
+            <param name="webRequest">WEB请求信息</param>
+            <param name="savePath">保存路径</param>
+            <param name="requestCookie">请求Cookie</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:CML.PkgNetwork.NetworkHelperE.DownloadFile(CML.PkgNetwork.MWebRequest,System.String,System.Net.CookieContainer@)">
+            <summary>
+            下载文件
+            </summary>
+            <param name="webRequest">WEB请求信息</param>
+            <param name="savePath">保存路径</param>
+            <param name="responseCookie">[OUT]响应Cookie</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:CML.PkgNetwork.NetworkHelperE.DownloadFile(CML.PkgNetwork.MWebRequest,System.String,System.Net.CookieContainer,System.Net.CookieContainer@)">
+            <summary>
+            下载文件
+            </summary>
+            <param name="webRequest">WEB请求信息</param>
+            <param name="savePath">保存路径</param>
+            <param name="requestCookie">请求Cookie</param>
+            <param name="responseCookie">[OUT]响应Cookie</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:CML.PkgNetwork.NetworkHelperE.GetWebStream(CML.PkgNetwork.MWebRequest)">
+            <summary>
+            获取数据流
+            </summary>
+            <param name="webRequest">WEB请求信息</param>
+            <returns>数据流</returns>
+        </member>
+        <member name="M:CML.PkgNetwork.NetworkHelperE.GetWebStream(CML.PkgNetwork.MWebRequest,System.Net.CookieContainer)">
+            <summary>
+            获取数据流
+            </summary>
+            <param name="webRequest">WEB请求信息</param>
+            <param name="requestCookie">请求Cookie</param>
+            <returns>数据流</returns>
+        </member>
+        <member name="M:CML.PkgNetwork.NetworkHelperE.GetWebStream(CML.PkgNetwork.MWebRequest,System.Net.CookieContainer@)">
+            <summary>
+            获取数据流
+            </summary>
+            <param name="webRequest">WEB请求信息</param>
+            <param name="responseCookie">[OUT]响应Cookie</param>
+            <returns>数据流</returns>
+        </member>
+        <member name="M:CML.PkgNetwork.NetworkHelperE.GetWebStream(CML.PkgNetwork.MWebRequest,System.Net.CookieContainer,System.Net.CookieContainer@)">
+            <summary>
+            获取数据流
+            </summary>
+            <param name="webRequest">WEB请求信息</param>
+            <param name="requestCookie">请求Cookie</param>
+            <param name="responseCookie">[OUT]响应Cookie</param>
+            <returns>数据流</returns>
+        </member>
+        <member name="T:CML.PkgNetwork.UserAgentHelper">
+            <summary>
+            UserAgent帮助类
+            </summary>
+        </member>
+        <member name="M:CML.PkgNetwork.UserAgentHelper.GetUserAgent">
+            <summary>
+            获取随机UserAgent
+            </summary>
+            <returns>UserAgent</returns>
+        </member>
+        <member name="T:CML.PkgNetwork.VersionInfo">
+            <summary>
+            网络操作工具包版本信息
+            </summary>
+        </member>
+        <member name="P:CML.PkgNetwork.VersionInfo.VerMain">
+            <summary>
+            主版本号
+            </summary>
+        </member>
+        <member name="P:CML.PkgNetwork.VersionInfo.VerDev">
+            <summary>
+            研发版本号
+            </summary>
+        </member>
+        <member name="P:CML.PkgNetwork.VersionInfo.VerDate">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="P:CML.PkgNetwork.VersionInfo.RunAssembly">
+            <summary>
+            当前程序集 
+            </summary>
+        </member>
+        <member name="M:CML.PkgNetwork.VersionInfo.GetVersionInfo">
             <summary>
             获得版本信息
             </summary>
